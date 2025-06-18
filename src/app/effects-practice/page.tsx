@@ -6,7 +6,6 @@ import Navigation from "../../components/Navigation";
 import EffectsShadowPractice from "../../components/Practice/Effects/EffectsShadowPractice";
 import EffectsHoverPractice from "../../components/Practice/Effects/EffectsHoverPractice";
 import EffectsTransformPractice from "../../components/Practice/Effects/EffectsTransformPractice";
-import EffectsBasicPractice from "../../components/Practice/Effects/EffectsBasicPractice";
 import EffectsAdvancedPractice from "../../components/Practice/Effects/EffectsAdvancedPractice";
 import EffectsShadowAnswer from "../../components/Practice/Effects/Answer/EffectsShadowAnswer";
 import EffectsHoverAnswer from "../../components/Practice/Effects/Answer/EffectsHoverAnswer";
