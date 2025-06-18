@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  background-color: #e2e8f0;
+  border-radius: 0.375rem;
+  margin-top: 2rem;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.fontSizeLarge {
+  font-size: 2rem;
+}
+.fontSizeMedium {
+  font-size: 1.25rem;
+}
+.fontSizeSmall {
+  font-size: 1rem;
+}
+.fontLight {
+  font-weight: 300;
+}
+.fontBold {
+  font-weight: 700;
+}
+.textLeft {
+  text-align: left;
+}
+.textCenter {
+  text-align: center;
+}
+.textRight {
+  text-align: right;
+}
+.textPrimary {
+  color: #1d4ed8;
+}
+.bgHighlight {
+  background-color: #bfdbfe;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.borderExample {
+  border: 2px solid #2563eb;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.roundedExample {
+  border: 1px solid #9ca3af;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
