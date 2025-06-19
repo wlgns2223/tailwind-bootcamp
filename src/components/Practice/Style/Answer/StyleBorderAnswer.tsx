@@ -9,27 +9,43 @@ export default function StyleBorderAnswer() {
           {`.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
-.rounded-box {
-  padding: 1rem;
+.card-base {
+  position: relative;
+  padding: 1.5rem;
   background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 1rem;
   text-align: center;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.thick-border {
-  border: 4px solid #3b82f6; /* border-4 border-blue-500 */
+.multi-border {
+  border: 3px solid #ef4444; /* border-3 border-red-500 */
+  border-top: 6px solid #3b82f6; /* border-t-6 border-blue-500 */
+  border-bottom: 6px solid #10b981; /* border-b-6 border-green-500 */
 }
 
-.dashed-border {
-  border: 2px dashed #9ca3af; /* border-2 border-dashed border-gray-400 */
+.inset-border {
+  border: 4px inset #8b5cf6; /* border-4 border-inset border-purple-500 */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.shadow-box {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+.outline-style {
+  border: 2px solid transparent;
+  outline: 3px solid #f59e0b; /* outline outline-amber-500 */
+  outline-offset: 4px;
+}
+
+.complex-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }`}
         </pre>
       </div>
@@ -37,18 +53,31 @@ export default function StyleBorderAnswer() {
       <div>
         <h5 className="font-medium mb-2 text-gray-700">실제 결과:</h5>
         <div className="p-4 border rounded bg-white">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 bg-white border rounded-lg text-center">
-              둥근 모서리
+          <div className="grid grid-cols-2 gap-6 p-6">
+            <div className="relative p-6 bg-white rounded-2xl text-center min-h-[120px] flex flex-col justify-center border-3 border-red-500 border-t-6 border-t-blue-500 border-b-6 border-b-green-500">
+              <span className="font-semibold text-gray-700">다색 테두리</span>
+              <span className="text-xs text-gray-500 mt-1">Multi-Border</span>
             </div>
-            <div className="p-4 bg-white border-4 border-blue-500 text-center">
-              두꺼운 테두리
+            <div
+              className="relative p-6 bg-white rounded-2xl text-center min-h-[120px] flex flex-col justify-center border-4 border-purple-500"
+              style={{ borderStyle: "inset", boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.1)" }}
+            >
+              <span className="font-semibold text-gray-700">인셋 테두리</span>
+              <span className="text-xs text-gray-500 mt-1">Inset Border</span>
             </div>
-            <div className="p-4 bg-white border-2 border-dashed border-gray-400 text-center">
-              점선 테두리
+            <div className="relative p-6 bg-white rounded-2xl text-center min-h-[120px] flex flex-col justify-center border-2 border-transparent outline-3 outline-amber-500 outline-offset-4">
+              <span className="font-semibold text-gray-700">아웃라인 스타일</span>
+              <span className="text-xs text-gray-500 mt-1">Outline Style</span>
             </div>
-            <div className="p-4 bg-white border shadow-lg text-center">
-              그림자 효과
+            <div
+              className="relative p-6 bg-white rounded-2xl text-center min-h-[120px] flex flex-col justify-center shadow-lg shadow-gray-500/20"
+              style={{
+                boxShadow:
+                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <span className="font-semibold text-gray-700">복합 그림자</span>
+              <span className="text-xs text-gray-500 mt-1">Complex Shadow</span>
             </div>
           </div>
         </div>
@@ -58,16 +87,16 @@ export default function StyleBorderAnswer() {
         <h6 className="font-medium text-yellow-800 mb-2">핵심 포인트:</h6>
         <ul className="text-sm text-yellow-700 space-y-1">
           <li>
-            • <code>rounded-lg</code>: 둥근 모서리
+            • <code>border-t-6 border-b-6</code>: 상하 테두리 두께 차별화
           </li>
           <li>
-            • <code>border-4</code>: 두꺼운 테두리
+            • <code>border-inset</code>: 내부로 들어간 테두리 효과
           </li>
           <li>
-            • <code>border-dashed</code>: 점선 스타일
+            • <code>outline-offset-4</code>: 아웃라인과 요소 간격
           </li>
           <li>
-            • <code>shadow-lg</code>: 큰 그림자
+            • <code>complex shadow</code>: 다중 그림자 효과 조합
           </li>
         </ul>
       </div>
