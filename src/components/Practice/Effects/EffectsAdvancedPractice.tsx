@@ -4,15 +4,11 @@ export default function EffectsAdvancedPractice() {
   return (
     <div className="mb-8">
       <div className="mb-4">
-        <h3 className="text-lg font-semibold text-gray-700">
-          실습 영역 (TailwindCSS로 변환하세요)
-        </h3>
+        <h3 className="text-lg font-semibold text-gray-700">실습 영역 (TailwindCSS로 변환하세요)</h3>
       </div>
 
       <div className="p-6 bg-gray-50 rounded-lg">
-        <h4 className="text-md font-medium mb-4 text-gray-600">
-          고급 Effects 조합하기:
-        </h4>
+        <h4 className="text-md font-medium mb-4 text-gray-600">고급 Effects 조합하기:</h4>
         <div className="p-8 space-y-6">
           {/* 3D 카드 효과 */}
           <div className="text-center mb-8">
@@ -48,45 +44,6 @@ export default function EffectsAdvancedPractice() {
             <div className="">
               {/* 여기에 글리치 효과를 작성하세요 */}
               GLITCH
-            </div>
-          </div>
-
-          {/* 그라데이션 애니메이션 */}
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">
-              그라데이션 애니메이션
-            </h3>
-            <div className="">
-              {/* 여기에 그라데이션 애니메이션을 작성하세요 */}
-              그라데이션
-            </div>
-          </div>
-
-          {/* 모핑 셰이프 */}
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">모핑 셰이프</h3>
-            <div className="flex justify-center space-x-8">
-              <div className="">{/* 여기에 모핑 셰이프를 작성하세요 */}</div>
-              <div className="">{/* 여기에 모핑 셰이프를 작성하세요 */}</div>
-              <div className="">{/* 여기에 모핑 셰이프를 작성하세요 */}</div>
-            </div>
-          </div>
-
-          {/* 파티클 효과 */}
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">파티클 효과</h3>
-            <div className="">
-              {/* 여기에 파티클 효과를 작성하세요 */}
-              마우스를 올려보세요
-            </div>
-          </div>
-
-          {/* 네온 효과 */}
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">네온 효과</h3>
-            <div className="">
-              {/* 여기에 네온 효과를 작성하세요 */}
-              NEON SIGN
             </div>
           </div>
         </div>
