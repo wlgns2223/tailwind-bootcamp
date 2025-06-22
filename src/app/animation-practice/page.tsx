@@ -6,6 +6,7 @@ import AnimationLoadingPractice from "../../components/Practice/Animation/Animat
 import AnimationModalPractice from "../../components/Practice/Animation/AnimationModalPractice";
 import AnimationKeyframePractice from "../../components/Practice/Animation/AnimationKeyframePractice";
 import AnimationMarqueePractice from "../../components/Practice/Animation/AnimationMarqueePractice";
+import AnimationVerticalMarqueePractice from "../../components/Practice/Animation/AnimationVerticalMarqueePractice";
 import AnimationBasicAnswer from "../../components/Practice/Animation/Answer/AnimationBasicAnswer";
 import AnimationHoverAnswer from "../../components/Practice/Animation/Answer/AnimationHoverAnswer";
 import AnimationCardAnswer from "../../components/Practice/Animation/Answer/AnimationCardAnswer";
@@ -13,6 +14,7 @@ import AnimationLoadingAnswer from "../../components/Practice/Animation/Answer/A
 import AnimationModalAnswer from "../../components/Practice/Animation/Answer/AnimationModalAnswer";
 import AnimationKeyframeAnswer from "../../components/Practice/Animation/Answer/AnimationKeyframeAnswer";
 import AnimationMarqueeAnswer from "../../components/Practice/Animation/Answer/AnimationMarqueeAnswer";
+import AnimationVerticalMarqueeAnswer from "../../components/Practice/Animation/Answer/AnimationVerticalMarqueeAnswer";
 
 export default function AnimationPracticePage() {
   return (
@@ -22,7 +24,7 @@ export default function AnimationPracticePage() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4 text-gray-800">TailwindCSS Animation 실습</h1>
-            <p className="text-lg text-gray-600">TailwindCSS 애니메이션을 활용한 7단계 실습을 단계별로 진행해보세요!</p>
+            <p className="text-lg text-gray-600">TailwindCSS 애니메이션을 활용한 8단계 실습을 단계별로 진행해보세요!</p>
           </div>
 
           {/* 실습 1: 기본 애니메이션 (쉬움) */}
@@ -106,7 +108,7 @@ export default function AnimationPracticePage() {
           {/* 실습 7: 세로 Marquee 애니메이션 (고급) */}
           <section className="mb-12 bg-white rounded-xl p-8 shadow-lg">
             <h2 className="text-2xl font-semibold mb-6 text-gray-700">
-              실습 7: 세로 Marquee 애니메이션 (⭐⭐⭐⭐⭐⭐)
+              실습 7: 가로 Marquee 애니메이션 (⭐⭐⭐⭐⭐⭐)
             </h2>
 
             {/* 목표 결과 */}
@@ -116,6 +118,21 @@ export default function AnimationPracticePage() {
             </div>
 
             <AnimationMarqueePractice />
+          </section>
+
+          {/* 실습 8: 세로 3줄 Marquee 애니메이션 (최고급) */}
+          <section className="mb-12 bg-white rounded-xl p-8 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-6 text-gray-700">
+              실습 8: 세로 3줄 Marquee 애니메이션 (⭐⭐⭐⭐⭐⭐⭐)
+            </h2>
+
+            {/* 목표 결과 */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-3 text-gray-700">🎯 목표 결과:</h3>
+              <AnimationVerticalMarqueeAnswer />
+            </div>
+
+            <AnimationVerticalMarqueePractice />
           </section>
 
           {/* 실습 완료 안내 */}

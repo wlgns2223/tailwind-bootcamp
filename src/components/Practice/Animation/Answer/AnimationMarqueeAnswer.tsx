@@ -63,13 +63,15 @@ export default function AnimationMarqueeAnswer() {
       `}</style>
 
       <div className="text-center mb-6">
-        <h4 className="font-semibold text-gray-700 mb-2">🎯 완성된 가로 Marquee 애니메이션</h4>
-        <p className="text-sm text-gray-600">오른쪽에서 왼쪽으로 흐르는 가로 marquee (호버 시 일시정지)</p>
+        <h4 className="font-semibold text-gray-700 mb-2 ">🎯 완성된 가로 Marquee 애니메이션</h4>
+        <p className="text-sm text-gray-600 ">오른쪽에서 왼쪽으로 흐르는 가로 marquee (호버 시 일시정지)</p>
+        <p className="text-sm text-gray-600 ">네이밍 컨벤션 주의. marqueeLeft 등 카멜케이스 동작안할 가능성 높음</p>
+        <p className="text-sm text-gray-600 ">{"marqueeLeft -> marquee: 네이밍 컨벤션으로 단어 권장"}</p>
       </div>
 
       {/* 완성된 가로 Marquee */}
       <div className="marquee-container">
-        <div className="marquee-content">
+        <div className="marquee-content marquee-animation ">
           {[...items, ...items].map((item, index) => (
             <div key={index} className="marquee-item">
               {item}
