@@ -17,6 +17,7 @@ export default function Navigation() {
         { href: "/effects-demo", label: "Effects", icon: "✨" },
         { href: "/gradient-demo", label: "Gradient", icon: "🌈" },
         { href: "/transition-demo", label: "Transition", icon: "🔄" },
+        { href: "/animation-demo", label: "Animation", icon: "🚀" },
       ],
     },
     {
