@@ -22,13 +22,14 @@ export default function Navigation() {
     {
       label: "🛠️ 실습 템플릿",
       children: [
-        { href: "/flex-practice", label: "Flex", icon: "�" },
+        { href: "/flex-practice", label: "Flex", icon: "📐" },
         { href: "/grid-practice", label: "Grid", icon: "⚏" },
         { href: "/style-practice", label: "Style", icon: "🎨" },
         { href: "/responsive-practice", label: "Responsive", icon: "📱" },
         { href: "/effects-practice", label: "Effects", icon: "✨" },
         { href: "/gradient-practice", label: "Gradient", icon: "🌈" },
-        { href: "/transition-practice", label: "Transition", icon: "�" },
+        { href: "/transition-practice", label: "Transition", icon: "💨" },
+        { href: "/animation-practice", label: "Animation", icon: "🚀" },
       ],
     },
   ];
@@ -37,9 +38,7 @@ export default function Navigation() {
     <nav className="bg-white shadow-md border-b border-gray-200 mb-8">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="text-xl font-bold text-gray-800">
-            TailwindCSS 강의
-          </div>
+          <div className="text-xl font-bold text-gray-800">TailwindCSS 강의</div>
           <div className="flex space-x-1">
             {navItems.map((item, index) => (
               <div key={index} className="relative group">
