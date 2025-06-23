@@ -32,9 +32,9 @@ export default function AnimationLoadingPractice() {
           {/* 도트 로더 */}
           <div>
             <div className="flex justify-center space-x-2">
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+              <div className="animate-bounce  w-3 h-3 bg-blue-500 rounded-full"></div>
+              <div className="animate-bounce [animation-delay:0.2s]  w-3 h-3 bg-blue-500 rounded-full"></div>
+              <div className="animate-bounce [animation-delay:0.3s] w-3 h-3 bg-blue-500 rounded-full"></div>
             </div>
             <p className="mt-4 text-gray-600">Dots Loading</p>
           </div>

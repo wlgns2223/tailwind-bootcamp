@@ -7,19 +7,6 @@ export default function AnimationMarqueeAnswer() {
     <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
       {/* 완성된 가로 marquee CSS */}
       <style jsx>{`
-        @keyframes marqueeLeft {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        .marquee-animation {
-          animation: marqueeLeft 20s linear infinite;
-        }
-
         .marquee-container:hover .marquee-animation {
           animation-play-state: paused;
         }
@@ -40,7 +27,6 @@ export default function AnimationMarqueeAnswer() {
           align-items: center;
           white-space: nowrap;
           width: max-content;
-          animation: marqueeLeft 20s linear infinite;
         }
 
         .marquee-item {
@@ -71,7 +57,7 @@ export default function AnimationMarqueeAnswer() {
 
       {/* 완성된 가로 Marquee */}
       <div className="marquee-container">
-        <div className="marquee-content marquee-animation ">
+        <div className="marquee-content animate-marquee">
           {[...items, ...items].map((item, index) => (
             <div key={index} className="marquee-item">
               {item}

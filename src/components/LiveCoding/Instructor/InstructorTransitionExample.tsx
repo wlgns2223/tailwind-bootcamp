@@ -13,7 +13,9 @@ export default function InstructorTransitionExample() {
 
         {/* Success Button 구현 영역 */}
         <div className="text-center p-8">
-          <button className="">Success Button</button>
+          <button className="transition  px-4 py-2 active:scale-95 hover:scale-105 bg-green-500 hover:bg-green-600 text-white rounded">
+            Success Button
+          </button>
         </div>
       </section>
     </div>

@@ -1,9 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 export default function AnimationModalPractice() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimated, setIsAnimated] = useState<boolean>(false);
+  const [animationTimer, setAnimationTimer] = useState<NodeJS.Timeout>();
+  const [openerTimer, setOpenerTimer] = useState<NodeJS.Timeout>();
+  const ANIMATION_TIME = 10;
+
+  useEffect(() => {
+    if (isOpen) {
+      const animationTimeout = setTimeout(() => setIsAnimated(true), ANIMATION_TIME);
+      setAnimationTimer(animationTimeout);
+    } else {
+      setIsAnimated(false);
+      clearTimeout(animationTimer);
+      clearTimeout(openerTimer);
+    }
+
+    return () => {
+      if (animationTimer) {
+        clearTimeout(animationTimer);
+      }
+
+      if (openerTimer) {
+        clearTimeout(openerTimer);
+      }
+    };
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setIsAnimated(false);
+    const openTimeout = setTimeout(() => {
+      setIsOpen(false);
+    }, 1000);
+    setOpenerTimer(openTimeout);
+  };
 
   return (
     <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-lg p-6">
@@ -41,13 +75,25 @@ export default function AnimationModalPractice() {
         {isOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* 배경 오버레이 - 여기에 투명도 애니메이션을 추가하세요 */}
-            <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsOpen(false)}></div>
+            <div
+              className={clsx("absolute inset-0 bg-black opacity-0 transition duration-1000", {
+                "opacity-50": isAnimated,
+              })}
+              onClick={handleClose}
+            ></div>
 
             {/* 모달 컨텐츠 - 여기에 스케일과 투명도 애니메이션을 추가하세요 */}
-            <div className="relative bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl">
+            <div
+              className={clsx(
+                "relative bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl transition duration-1000 scale-75 opacity-0 ",
+                {
+                  "scale-100 opacity-100": isAnimated,
+                }
+              )}
+            >
               {/* 닫기 버튼 */}
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl transition-colors"
               >
                 ×
@@ -61,7 +107,7 @@ export default function AnimationModalPractice() {
                   이 모달에 애니메이션을 추가해보세요. 목표 결과와 비교해보며 완성해보세요!
                 </p>
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleClose}
                   className="px-6 py-2 bg-violet-500 text-white rounded-lg font-semibold hover:bg-violet-600 transition-colors"
                 >
                   확인

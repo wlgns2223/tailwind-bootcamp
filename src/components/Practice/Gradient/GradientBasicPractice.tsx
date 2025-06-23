@@ -4,15 +4,11 @@ export default function GradientBasicPractice() {
   return (
     <div className="mb-8">
       <div className="mb-4">
-        <h3 className="text-lg font-semibold text-gray-700">
-          실습 영역 (TailwindCSS로 변환하세요)
-        </h3>
+        <h3 className="text-lg font-semibold text-gray-700">실습 영역 (TailwindCSS로 변환하세요)</h3>
       </div>
 
       <div className="p-6 bg-gray-50 rounded-lg">
-        <h4 className="text-md font-medium mb-4 text-gray-600">
-          기본 Gradient 만들기:
-        </h4>
+        <h4 className="text-md font-medium mb-4 text-gray-600">기본 Gradient 만들기:</h4>
         <div className="space-y-6">
           {/* 기본 선형 그라디언트 */}
           <div className="text-center">
@@ -37,7 +33,9 @@ export default function GradientBasicPractice() {
             <h3 className="text-lg font-semibold mb-4">수직 그라디언트</h3>
             <div className="">
               {/* 여기에 bg-gradient-to-b from-green-400 to-blue-500 클래스를 적용하세요 */}
-              <span className="text-white font-semibold">Green to Blue</span>
+              <span className="bg-linear-to-b from-green-400 to-blue-400 w-64 h-32 rounded-lg flex items-center justify-center shadow text-white font-semibold">
+                Green to Blue
+              </span>
             </div>
           </div>
 
@@ -46,7 +44,9 @@ export default function GradientBasicPractice() {
             <h3 className="text-lg font-semibold mb-4">대각선 그라디언트</h3>
             <div className="">
               {/* 여기에 bg-gradient-to-br from-yellow-400 to-red-500 클래스를 적용하세요 */}
-              <span className="text-white font-semibold">Yellow to Red</span>
+              <span className="bg-linear-150 from-yellow-400 to-red-400 w-64 h-32 rounded-lg flex items-center justify-center shadow text-white font-semibold">
+                Yellow to Red
+              </span>
             </div>
           </div>
         </div>

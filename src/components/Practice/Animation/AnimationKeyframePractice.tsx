@@ -1,9 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import clsx from "clsx";
 
 export default function AnimationKeyframePractice() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 300);
+  };
 
   return (
     <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6">
@@ -33,32 +43,6 @@ export default function AnimationKeyframePractice() {
         <style jsx>{`
           /* 여기에 @keyframes를 정의하세요 */
 
-          @keyframes modalBounceIn {
-            0% {
-              transform: translateY(-100px) scale(0.8);
-              opacity: 0;
-            }
-            50% {
-              transform: translateY(10px) scale(1.05);
-              opacity: 0.8;
-            }
-            100% {
-              transform: translateY(0) scale(1);
-              opacity: 1;
-            }
-          }
-
-          @keyframes modalSlideOut {
-            0% {
-              transform: translateY(0) scale(1);
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100px) scale(0.8);
-              opacity: 0;
-            }
-          }
-
           @keyframes contentFadeInUp {
             0% {
               transform: translateY(20px);
@@ -68,14 +52,6 @@ export default function AnimationKeyframePractice() {
               transform: translateY(0);
               opacity: 1;
             }
-          }
-
-          .modal-bounce-in {
-            animation: modalBounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          }
-
-          .modal-slide-out {
-            animation: modalSlideOut 0.4s ease-in-out;
           }
 
           .content-fade-in-up {
@@ -102,15 +78,23 @@ export default function AnimationKeyframePractice() {
           <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* 배경 오버레이 - 여기에 페이드인 애니메이션 클래스를 추가하세요 */}
             <div
-              className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
-              onClick={() => setIsOpen(false)}
+              className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm animate-content-fade-in-up"
+              onClick={handleClose}
             ></div>
 
             {/* 모달 컨텐츠 - 여기에 키프레임 애니메이션 클래스를 추가하세요 */}
-            <div className="relative bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl">
+            <div
+              className={clsx(
+                "relative bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl animate-modal-bounce-in",
+                {
+                  "animate-modal-bounce-in": !isClosing,
+                  "animate-modal-slide-out": isClosing,
+                }
+              )}
+            >
               {/* 닫기 버튼 */}
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 hover:rotate-90 text-3xl transition-all duration-300"
               >
                 ×
